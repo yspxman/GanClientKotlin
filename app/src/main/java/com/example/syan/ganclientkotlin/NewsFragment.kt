@@ -18,10 +18,7 @@ class NewsFragment : Fragment(){
         news_list
     }
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-
         val view = container?.inflate(R.layout.news_fragment)
-        news_list.setHasFixedSize(true)
-        news_list.layoutManager = LinearLayoutManager(context)
         return view
     }
 
