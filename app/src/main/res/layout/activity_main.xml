@@ -19,17 +19,14 @@
           android:layout_height="60dp"
           android:background="@android:color/holo_green_light"/>
 
-
-
   </android.support.design.widget.AppBarLayout>
-
-
 
     <FrameLayout
         android:id="@+id/activity_base_content"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-
     </FrameLayout>
+
+
 </android.support.design.widget.CoordinatorLayout>

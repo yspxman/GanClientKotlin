@@ -15,6 +15,9 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         findViewById<Toolbar>(R.id.toolbar)
         //setSupportActionBar(toolbar)
+
+
+        changeFragment(NewsFragment())
     }
 
     fun changeFragment(f: Fragment, clearnStack: Boolean =false){
