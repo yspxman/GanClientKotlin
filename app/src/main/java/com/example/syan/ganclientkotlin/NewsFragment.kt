@@ -7,10 +7,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.syan.ganclientkotlin.Common.RedditNewsItem
 import com.example.syan.ganclientkotlin.Common.inflate
 import com.example.syan.ganclientkotlin.adapters.NewsAdapter
 import kotlinx.android.synthetic.main.news_fragment.*
-
+import kotlinx.android.synthetic.main.news_item.*
 
 class NewsFragment : Fragment(){
 
@@ -27,11 +28,32 @@ class NewsFragment : Fragment(){
 
         initAdapter()
 
+
+        if (savedInstanceState == null){
+            val news = mutableListOf<RedditNewsItem>()
+            for (i in 1..10){
+                news.add(RedditNewsItem(
+                        "author$i",
+                        "title$1",
+                         i,
+                        888,
+                        "https://picsum.photos/200/200?image=$i",
+                        "url"
+                ))
+            }
+
+
+            (news_list.adapter as NewsAdapter).addNews(news)
+        }
+
+
     }
 
     private fun initAdapter(){
         if (news_list.adapter == null){
             news_list.adapter = NewsAdapter()
+
+
         }
     }
 }
