@@ -12,9 +12,7 @@ fun ViewGroup.inflate (id : Int, attachToRoot: Boolean = false): View{
 }
 
 fun ImageView.loadImg(url: String){
-    Picasso.with(context).load(R.mipmap.ic_launcher).into(this)
 
-    /*
     if (TextUtils.isEmpty(url)){
         Picasso.with(context).load(R.mipmap.ic_launcher).into(this)
     }
@@ -22,7 +20,6 @@ fun ImageView.loadImg(url: String){
     {
         Picasso.with(context).load(url).into(this)
     }
-*/
 }
 
 
