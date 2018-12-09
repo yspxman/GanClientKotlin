@@ -1,5 +1,4 @@
 package com.example.syan.ganclientkotlin.Common
-
 import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
@@ -7,14 +6,15 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import com.example.syan.ganclientkotlin.R
 import com.squareup.picasso.Picasso
-import java.util.*
-import java.util.zip.Inflater
 
 fun ViewGroup.inflate (id : Int, attachToRoot: Boolean = false): View{
     return LayoutInflater.from(context).inflate(id, this, attachToRoot)
 }
 
 fun ImageView.loadImg(url: String){
+    Picasso.with(context).load(R.mipmap.ic_launcher).into(this)
+
+    /*
     if (TextUtils.isEmpty(url)){
         Picasso.with(context).load(R.mipmap.ic_launcher).into(this)
     }
@@ -22,8 +22,7 @@ fun ImageView.loadImg(url: String){
     {
         Picasso.with(context).load(url).into(this)
     }
-
-
+*/
 }
 
 

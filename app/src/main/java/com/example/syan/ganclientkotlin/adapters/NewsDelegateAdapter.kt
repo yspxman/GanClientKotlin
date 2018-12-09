@@ -9,10 +9,9 @@ import com.example.syan.ganclientkotlin.Common.inflate
 import com.example.syan.ganclientkotlin.R
 import kotlinx.android.synthetic.main.news_item.view.*
 import com.example.syan.ganclientkotlin.Common.*
+import com.squareup.picasso.Picasso
 
 class NewsDelegateAdapter : ViewTypeDelegateAdapter{
-
-
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, item: ViewType) {
         holder as TurnsViewHolder
@@ -20,38 +19,30 @@ class NewsDelegateAdapter : ViewTypeDelegateAdapter{
     }
 
     override fun onCreateViewHolder(parent: ViewGroup): RecyclerView.ViewHolder {
-
         var layout = parent.inflate(R.layout.news_item)
-
         val holder = TurnsViewHolder(layout)
         return holder
     }
 
-    class TurnsViewHolder(layout: View): RecyclerView.ViewHolder(layout)
-    {
+    class TurnsViewHolder(layout: View): RecyclerView.ViewHolder(layout){
         var imgView : ImageView
         var desc: TextView
         var authorTv: TextView
         var comments: TextView
 
         init {
-
             imgView =  layout.findViewById<ImageView>(R.id.img_thumbnail)
             desc =  layout.findViewById<TextView>(R.id.description)
             authorTv =  layout.findViewById<TextView>(R.id.author)
             comments =  layout.findViewById<TextView>(R.id.comments)
-
         }
 
         fun bind(item: RedditNewsItem) = with(item){
-
-            imgView.loadImg(item.thumbnail)
-            desc.text = item.title
+            //imgView.loadImg(item.thumbnail)
+            Picasso.with(imgView.context).load(item.thumbnail).into(imgView)
+            desc.text = item.title + item.thumbnail
             authorTv.text = item.author
             comments.text = "${item.numComments} comments"
-
         }
-
     }
-
 }
